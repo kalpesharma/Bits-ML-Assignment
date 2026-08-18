@@ -39,10 +39,9 @@ Thumbs.db
 
 # Project specific
 .streamlit/
-*.pkl
-*.joblib
 model_results.csv
 model_comparison_results.csv
+# Note: models/*.pkl files are intentionally tracked for deployment
 
 # Cache files
 .cache
