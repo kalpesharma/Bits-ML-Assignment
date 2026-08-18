@@ -46,10 +46,12 @@ st.markdown("""
 def load_models():
     """Load all trained models from disk"""
     models = {}
-    model_dir = 'models'
+    # Get the directory of the current script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    model_dir = os.path.join(script_dir, 'models')
     
     if not os.path.exists(model_dir):
-        st.error("Models directory not found! Please run train_models.py first.")
+        st.error(f"Models directory not found at {model_dir}! Please run train_models.py first.")
         return None
     
     model_files = [
@@ -81,10 +83,12 @@ def load_models():
 def load_test_data():
     """Load test data from CSV"""
     try:
-        df = pd.read_csv('test_data.csv')
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        data_path = os.path.join(script_dir, 'test_data.csv')
+        df = pd.read_csv(data_path)
         return df
-    except FileNotFoundError:
-        st.warning("test_data.csv not found!")
+    except FileNotFoundError as e:
+        st.warning(f"test_data.csv not found! {e}")
         return None
 
 def predict_and_evaluate(model, X_test, y_test, scaler):
