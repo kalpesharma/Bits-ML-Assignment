@@ -204,8 +204,8 @@ ml_assignment/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/ml-assignment-2.git
-   cd ml-assignment-2
+   git clone https://github.com/kalpesharma/Bits-ML-Assignment.git
+   cd Bits-ML-Assignment
    ```
 
 2. **Create virtual environment (recommended)**
