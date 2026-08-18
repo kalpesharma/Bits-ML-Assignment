@@ -104,54 +104,54 @@ Access the complete source code, documentation, and trained models at the reposi
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 |---|---|---|---|---|---|---|
-| Logistic Regression | 0.7406 | 0.8242 | 0.7683 | 0.7368 | 0.7522 | 0.4808 |
-| Decision Tree | 0.7531 | 0.7718 | 0.7706 | 0.7661 | 0.7683 | 0.5041 |
-| KNN | 0.7406 | 0.8117 | 0.7588 | 0.7544 | 0.7566 | 0.4790 |
-| Naive Bayes | 0.7219 | 0.7884 | 0.7733 | 0.6784 | 0.7227 | 0.4500 |
-| Random Forest (Ensemble) | **0.8000** | **0.8896** | **0.8204** | **0.8012** | **0.8107** | **0.5990** |
+| Logistic Regression | 0.7423 | 0.8219 | 0.7634 | 0.7509 | 0.7571 | 0.4829 |
+| Decision Tree | 0.9068 | 0.9440 | 0.9243 | 0.8994 | 0.9117 | 0.8134 |
+| KNN | 0.7999 | 0.8812 | 0.7943 | 0.8444 | 0.8186 | 0.5973 |
+| Naive Bayes | 0.7342 | 0.7971 | 0.7688 | 0.7193 | 0.7432 | 0.4695 |
+| Random Forest (Ensemble) | 0.9400 | 0.9841 | 0.9470 | 0.9404 | 0.9437 | 0.8794 |
 
 ### Model Performance Observations
 
 #### Logistic Regression
-- **Strengths:** Good AUC score (0.8242), solid baseline model, provides probability estimates
-- **Weaknesses:** Lower accuracy (74.06%), assumes linear relationships, doesn't capture complex patterns
-- **Metrics:** Accuracy: 74.06%, F1: 75.22%
+- **Strengths:** Good AUC score (0.8219), solid baseline model, provides probability estimates
+- **Weaknesses:** Lower accuracy (74.23%), assumes linear relationships, doesn't capture complex patterns
+- **Metrics:** Accuracy: 74.23%, F1: 75.71%
 - **Use Case:** Good baseline model, interpretable, fast inference
 - **Performance:** Moderate performer, competitive with simpler models
 
 #### Decision Tree
-- **Strengths:** Good interpretability, captures non-linear patterns, high precision (77.06%)
-- **Weaknesses:** Moderate accuracy (75.31%), prone to overfitting, lower AUC (0.7718)
-- **Metrics:** Accuracy: 75.31%, F1: 76.83%
+- **Strengths:** Good interpretability, captures non-linear patterns, high precision (92.43%)
+- **Weaknesses:** Moderate accuracy (90.68%), prone to overfitting, decent AUC (0.9440)
+- **Metrics:** Accuracy: 90.68%, F1: 91.17%
 - **Use Case:** When interpretability is critical, understanding feature importance
-- **Performance:** Mid-range performer, good F1 score but limited AUC
+- **Performance:** Mid-range performer, good F1 score
 
 #### K-Nearest Neighbors (KNN)
-- **Strengths:** Good AUC score (0.8117), simple to implement, no training phase
-- **Weaknesses:** Same accuracy as Logistic Regression (74.06%), slow predictions, sensitive to scaling
-- **Metrics:** Accuracy: 74.06%, F1: 75.66%
+- **Strengths:** Good AUC score (0.8812), simple to implement
+- **Weaknesses:** Higher accuracy than Logistic Regression, Navie Bayes, slow predictions, sensitive to scaling
+- **Metrics:** Accuracy: 79.99%, F1: 81.86%
 - **Use Case:** Non-parametric classification, baseline comparison
 - **Performance:** Competitive but slower than linear models
 
 #### Naive Bayes
-- **Strengths:** Fastest training, good precision (77.33%), works with small datasets
-- **Weaknesses:** Lowest accuracy (72.19%), assumes feature independence (violated here), lowest overall score
-- **Metrics:** Accuracy: 72.19%, F1: 72.27%
+- **Strengths:** Fastest training, good precision (76.88%), works with small datasets
+- **Weaknesses:** Lowest accuracy (73.42%), assumes feature independence (violated here), lowest score across except Precision
+- **Metrics:** Accuracy: 73.42%, F1: 74.32%
 - **Use Case:** Text classification, quick prototyping
 - **Performance:** Weakest performer on this dataset, feature independence assumption problematic
 
 #### Random Forest (Ensemble) - **WINNER** 🏆
 - **Strengths:** 
-  - **Highest Accuracy (80.00%)** - Best overall correctness
-  - **Highest AUC (0.8896)** - Excellent discrimination ability
-  - **Highest Precision (82.04%)** - Fewer false positives
-  - **Highest Recall (80.12%)** - Better detection rate
-  - **Highest F1 Score (81.07%)** - Best balanced performance
-  - **Highest MCC (0.5990)** - Strongest correlation
+  - **Highest Accuracy (94.00%)** - Best overall correctness
+  - **Highest AUC (0.9841)** - Excellent discrimination ability
+  - **Highest Precision (94.70%)** - Fewer false positives
+  - **Highest Recall (94.04%)** - Better detection rate
+  - **Highest F1 Score (94.37%)** - Best balanced performance
+  - **Highest MCC (0.87940)** - Strongest correlation
   - Robust to outliers and feature scaling
   - Handles non-linear relationships well
 - **Weaknesses:** More complex model, longer training time, requires tuning
-- **Metrics:** Accuracy: 80.00%, F1: 81.07%
+- **Metrics:** Accuracy: 94.00%, F1: 74.32%
 - **Use Case:** Production systems where accuracy is critical
 - **Performance:** **BEST OVERALL PERFORMER** - Outperforms all models across ALL 6 metrics
 
@@ -161,16 +161,16 @@ Access the complete source code, documentation, and trained models at the reposi
 
 **Justification:**
 The Random Forest model definitively outperforms all other models across all 6 evaluation metrics:
-- Achieved the **highest accuracy (80.00%)** - 5.69% better than Decision Tree
-- **Strongest AUC score (0.8896)** - indicating excellent discrimination ability (0.0275 better than Logistic Regression)
-- **Best precision-recall tradeoff** - highest F1 score (81.07%)
+- Achieved the **highest accuracy (94.00%)** - 3.66% better than Decision Tree
+- **Strongest AUC score (0.9841)** - indicating excellent discrimination ability (0.0401 better than Decision tree)
+- **Best precision-recall tradeoff** - highest F1 score (94.37%)
 - **Most robust** across different evaluation criteria through ensemble averaging
 - **Reduced overfitting** through bagging and boosting principles
 - Handles the complex relationships in wine quality data effectively
 
 **Key Performance Advantages:**
-- ~6% improvement in accuracy over baseline
-- ~2.5% improvement in AUC over single models
+- Significant improvement in accuracy over baseline
+- Significant improvement in AUC over single models
 - Consistent performance across all metrics (no weak areas)
 - Best suited for real-world deployment
 
@@ -197,9 +197,9 @@ ml_assignment/
 ### Key Findings
 1. Ensemble methods (Random Forest) significantly outperform single models
 2. Logistic Regression provides good baseline performance
-3. KNN shows competitive AUC score but slower prediction
+3. Decision Tree shows competitive AUC score 
 4. Decision Trees are interpretable but prone to overfitting
-5. Naive Bayes assumes feature independence which may not hold for this dataset
+5. Naive Bayes assumes feature independence which may not be always
 
 
 ## Student
