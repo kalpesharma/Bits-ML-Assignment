@@ -308,7 +308,7 @@ def main():
         with col1:
             st.metric("Dataset Shape", f"{test_data.shape[0]} rows × {test_data.shape[1]} cols")
         with col2:
-            st.metric("Number of Features", test_data.shape[1] - 1)
+            st.metric("Number of Features", test_data.shape[1])
         with col3:
             st.metric("Number of Observations", test_data.shape[0])
         
