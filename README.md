@@ -42,9 +42,9 @@ The project demonstrates end-to-end machine learning workflow including:
 
 ## GitHub Repository Link
 
-[GitHub Repository](https://github.com/yourusername/ml-assignment-2)
+[GitHub Repository](https://github.com/kalpesharma/Bits-ML-Assignment)
 
-*Note: Update this with your actual GitHub repository link*
+Access the complete source code, documentation, and trained models at the repository above.
 
 ## Models Used
 
