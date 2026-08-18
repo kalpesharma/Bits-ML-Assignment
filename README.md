@@ -194,86 +194,6 @@ ml_assignment/
     └── scaler.pkl
 ```
 
-## Installation and Setup
-
-### Prerequisites
-- Python 3.8 or higher
-- pip (Python package manager)
-
-### Installation Steps
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/kalpesharma/Bits-ML-Assignment.git
-   cd Bits-ML-Assignment
-   ```
-
-2. **Create virtual environment (recommended)**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Train models**
-   ```bash
-   python train_models.py
-   ```
-   This will:
-   - Load the Wine Quality dataset
-   - Train all 5 models
-   - Calculate evaluation metrics
-   - Save trained models to `models/` directory
-   - Generate `test_data.csv` and `model_results.csv`
-
-## Running the Streamlit Application
-
-### Local Execution
-```bash
-streamlit run app.py
-```
-
-The app will open in your browser at `http://localhost:8501`
-
-### Features Available
-- **Tab 1 - Model Evaluation:** 
-  - Select individual models
-  - View detailed metrics
-  - See confusion matrices
-  - Classification reports
-
-- **Tab 2 - Model Comparison:**
-  - Compare all models side-by-side
-  - Visualize metrics comparison
-  - Identify the best performer
-
-- **Tab 3 - About:**
-  - Project information
-  - Dataset statistics
-  - Technologies used
-
-## Deployment on Streamlit Community Cloud
-
-1. Push code to GitHub
-2. Visit [streamlit.io/cloud](https://streamlit.io/cloud)
-3. Sign in with GitHub account
-4. Click "New App"
-5. Select repository and app.py
-6. Deploy!
-
-**Deployed App URL:** [Your Streamlit App Link]
-
-## Results and Performance
-
-### Test Dataset Performance Summary
-- **Total Test Samples:** 320
-- **Model Training Time:** < 1 minute for all models
-- **Average Prediction Time:** < 10ms per sample
-
 ### Key Findings
 1. Ensemble methods (Random Forest) significantly outperform single models
 2. Logistic Regression provides good baseline performance
@@ -281,34 +201,7 @@ The app will open in your browser at `http://localhost:8501`
 4. Decision Trees are interpretable but prone to overfitting
 5. Naive Bayes assumes feature independence which may not hold for this dataset
 
-## Technologies and Libraries
 
-- **Python 3.9+** - Programming language
-- **Scikit-learn 1.3.2** - Machine learning library
-- **Streamlit 1.36.0** - Web application framework
-- **Pandas 2.0.3** - Data manipulation and analysis
-- **NumPy 1.24.3** - Numerical computing
-- **Matplotlib 3.7.2** - Data visualization
-- **Seaborn 0.12.2** - Statistical data visualization
-
-## Author
-
-Your Name / Your ID  
+## Student
+Your Kalpesh Sharma / 2025da04264  
 Date: August 18, 2026
-
-## References
-
-1. Scikit-learn Documentation: https://scikit-learn.org/
-2. Streamlit Documentation: https://docs.streamlit.io/
-3. Wine Quality Dataset: https://archive.ics.uci.edu/ml/datasets/wine+quality
-4. Classification Metrics: https://en.wikipedia.org/wiki/Confusion_matrix
-
-## License
-
-This project is submitted as part of M.Tech (AIML/DSE) Machine Learning Assignment 2 at BITS Pilani.
-
----
-
-**Assignment Due Date:** August 18, 2026  
-**Assignment Marks:** 15  
-**Status:** Submitted ✓
